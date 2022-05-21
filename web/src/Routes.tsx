@@ -14,6 +14,7 @@ import DashboardLayout from './layouts/DashboardLayout/DashboardLayout'
 const Routes = () => {
   return (
     <Router>
+      <Route path="/item/{id}" page={ItemPage} name="item" />
       <Set wrap={TodosLayout}>
         <Route path="/todos/new" page={TodoNewTodoPage} name="newTodo" />
         <Route path="/todos/{id:Int}/edit" page={TodoEditTodoPage} name="editTodo" />
