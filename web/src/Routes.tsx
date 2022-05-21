@@ -15,17 +15,18 @@ const Routes = () => {
   return (
     <Router>
       <Set wrap={TodosLayout}>
-        <Route path="/todos/new" page={TodoNewTodoPage} name="newTodo" />
-        <Route path="/todos/{id:Int}/edit" page={TodoEditTodoPage} name="editTodo" />
-        <Route path="/todos/{id:Int}" page={TodoTodoPage} name="todo" />
-        <Route path="/todos" page={TodoTodosPage} name="todos" />
+        <Route path="/admin/todos/new" page={TodoNewTodoPage} name="newTodo" />
+        <Route path="/admin/todos/{id:Int}/edit" page={TodoEditTodoPage} name="editTodo" />
+        <Route path="/admin/todos/{id:Int}" page={TodoTodoPage} name="todo" />
+        <Route path="/admin/todos" page={TodoTodosPage} name="todos" />
       </Set>
       <Set wrap={DashboardLayout}>
         <Route path="/" page={HomePage} name="home" />
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/item/{id:Int}" page={ItemPage} name="item" />
-        <Route notfound page={NotFoundPage} />
+        <Route path="/contact" page={ContactPage} name="contact" />
       </Set>
+      <Route notfound page={NotFoundPage} />
     </Router>
   )
 }

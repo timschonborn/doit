@@ -82,7 +82,6 @@ const TodosList = ({ todos }) => {
             <th>Id</th>
             <th>Title</th>
             <th>Body</th>
-            <th>Done</th>
             <th>Created at</th>
             <th>&nbsp;</th>
           </tr>
@@ -93,7 +92,6 @@ const TodosList = ({ todos }) => {
               <td>{truncate(todo.id)}</td>
               <td>{truncate(todo.title)}</td>
               <td>{truncate(todo.body)}</td>
-              <td>{checkboxInputTag(todo.done)}</td>
               <td>{timeTag(todo.createdAt)}</td>
               <td>
                 <nav className="rw-table-actions">

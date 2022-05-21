@@ -80,9 +80,6 @@ const Todo = ({ todo }) => {
               <th>Body</th>
               <td>{todo.body}</td>
             </tr><tr>
-              <th>Done</th>
-              <td>{checkboxInputTag(todo.done)}</td>
-            </tr><tr>
               <th>Created at</th>
               <td>{timeTag(todo.createdAt)}</td>
             </tr>

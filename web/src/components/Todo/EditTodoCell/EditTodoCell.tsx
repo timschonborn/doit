@@ -13,7 +13,6 @@ export const QUERY = gql`
       id
       title
       body
-      done
       createdAt
     }
   }
@@ -24,7 +23,6 @@ const UPDATE_TODO_MUTATION = gql`
       id
       title
       body
-      done
       createdAt
     }
   }

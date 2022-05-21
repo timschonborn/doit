@@ -22,12 +22,11 @@ describe('todos', () => {
 
   scenario('creates a todo', async () => {
     const result = await createTodo({
-      input: { title: 'String', body: 'String', done: true },
+      input: { title: 'String', body: 'String' },
     })
 
     expect(result.title).toEqual('String')
     expect(result.body).toEqual('String')
-    expect(result.done).toEqual(true)
   })
 
   scenario('updates a todo', async (scenario: StandardScenario) => {

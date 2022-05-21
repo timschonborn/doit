@@ -11,7 +11,6 @@ export const QUERY = gql`
       id
       title
       body
-      done
       createdAt
     }
   }
