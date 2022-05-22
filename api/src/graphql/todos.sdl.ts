@@ -7,8 +7,8 @@ export const schema = gql`
   }
 
   type Query {
-    todos: [Todo!]! @requireAuth
-    todo(id: Int!): Todo @requireAuth
+    todos: [Todo!]! @skipAuth
+    todo(id: Int!): Todo @skipAuth
   }
 
   input CreateTodoInput {

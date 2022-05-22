@@ -7,19 +7,25 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Private, Router, Route, Set } from '@redwoodjs/router'
 import TodosLayout from 'src/layouts/TodosLayout'
 import DashboardLayout from './layouts/DashboardLayout/DashboardLayout'
 
 const Routes = () => {
   return (
     <Router>
-      <Set wrap={TodosLayout}>
-        <Route path="/admin/todos/new" page={TodoNewTodoPage} name="newTodo" />
-        <Route path="/admin/todos/{id:Int}/edit" page={TodoEditTodoPage} name="editTodo" />
-        <Route path="/admin/todos/{id:Int}" page={TodoTodoPage} name="todo" />
-        <Route path="/admin/todos" page={TodoTodosPage} name="todos" />
-      </Set>
+      <Route path="/login" page={LoginPage} name="login" />
+      <Route path="/signup" page={SignupPage} name="signup" />
+      <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
+      <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
+      <Private unauthenticated="home">
+        <Set wrap={TodosLayout}>
+          <Route path="/admin/todos/new" page={TodoNewTodoPage} name="newTodo" />
+          <Route path="/admin/todos/{id:Int}/edit" page={TodoEditTodoPage} name="editTodo" />
+          <Route path="/admin/todos/{id:Int}" page={TodoTodoPage} name="todo" />
+          <Route path="/admin/todos" page={TodoTodosPage} name="todos" />
+        </Set>
+      </Private>
       <Set wrap={DashboardLayout}>
         <Route path="/" page={HomePage} name="home" />
         <Route path="/about" page={AboutPage} name="about" />
