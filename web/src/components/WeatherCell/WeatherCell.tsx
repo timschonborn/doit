@@ -2,8 +2,8 @@ import type { GetWeatherQuery } from 'types/graphql'
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 export const QUERY = gql`
-  query GetWeatherQuery($city: String!) {
-    weather: getWeather(city: $city) {
+  query GetWeatherQuery($lat: Float, $lon: Float) {
+    weather: getWeather(lat: $lat, lon: $lon) {
       city
       conditions
       temp

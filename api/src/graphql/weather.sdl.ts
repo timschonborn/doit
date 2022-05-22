@@ -7,6 +7,6 @@ export const schema = gql`
   }
 
   type Query {
-    getWeather(city: String!): Weather! @skipAuth
+    getWeather(lat: Float, lon: Float): Weather! @skipAuth
   }
 `

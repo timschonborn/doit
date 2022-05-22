@@ -1,9 +1,7 @@
 import { fetch } from 'cross-undici-fetch'
 import { UserInputError } from '@redwoodjs/graphql-server'
 
-const LIMIT = 5
-
-export const getWeather = async ({ city }) => {
+export const getWeather = async ({ lat, lon }) => {
   // return {
   //   city: 'json.name',
   //   conditions: { weather: 'sunny' },
@@ -21,23 +19,16 @@ export const getWeather = async ({ city }) => {
   // console.log(geo)
 
   const response = await fetch(
-    `http://api.openweathermap.org/data/2.5/weather?lat=${52.092876}&lon=${5.10448}&appid=${
-      process.env.OPENWEATHER_API_KEY
-    }&units=metric`
+    `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.OPENWEATHER_API_KEY}&units=metric`
   )
-
-  console.log(response)
 
   const json = await response.json()
 
-  if (json.cod === '404') {
-    throw new UserInputError(
-      `${city} isn't a valid US zip code, please try again`
-    )
-  }
-
-  console.log(json)
-  console.log(typeof json.main.temp)
+  // if (json.cod === '404') {
+  //   throw new UserInputError(
+  //     `${city} isn't a valid US zip code, please try again`
+  //   )
+  // }
 
   return {
     city: json.name,

@@ -1,18 +1,10 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import ItemsCell from 'src/components/ItemsCell'
-import { Form, TextField, Submit } from '@redwoodjs/forms'
+// import { Form, TextField, Submit } from '@redwoodjs/forms'
 import WeatherCell from 'src/components/WeatherCell'
-import { useState } from 'react'
 
 const HomePage = () => {
-  const [city, setCity] = useState('Utrecht')
-
-  // const onSubmit = (data) => {
-  //   console.log('data', data)
-  //   setCity(data.city)
-  // }
-
   return (
     <>
       <MetaTags title="Home" description="Home page" />
@@ -35,7 +27,7 @@ const HomePage = () => {
 
         <Submit>Go</Submit>
       </Form> */}
-      {city && <WeatherCell city={city} />}
+      <WeatherCell lat={52.092876} lon={5.10448} />
     </>
   )
 }
