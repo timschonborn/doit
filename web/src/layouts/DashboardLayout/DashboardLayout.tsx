@@ -218,7 +218,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                           Your Profile
                         </Link>
                         <Link
-                          to={routes.home()}
+                          to={routes.settings()}
                           href="#"
                           className="block px-4 py-2 text-sm text-gray-700"
                           role="menuitem"
