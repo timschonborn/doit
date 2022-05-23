@@ -14,8 +14,6 @@ import DashboardLayout from './layouts/DashboardLayout/DashboardLayout'
 const Routes = () => {
   return (
     <Router>
-      <Route path="/profile" page={ProfilePage} name="profile" />
-      <Route path="/settings" page={SettingsPage} name="settings" />
       <Route path="/login" page={LoginPage} name="login" />
       <Route path="/signup" page={SignupPage} name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
@@ -33,6 +31,8 @@ const Routes = () => {
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/item/{id:Int}" page={ItemPage} name="item" />
         <Route path="/contact" page={ContactPage} name="contact" />
+        <Route path="/profile" page={ProfilePage} name="profile" />
+        <Route path="/settings" page={SettingsPage} name="settings" />
       </Set>
       <Route notfound page={NotFoundPage} />
     </Router>
