@@ -208,7 +208,7 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                       >
                         {/* <!-- Active: "bg-gray-100", Not Active: "" --> */}
                         <Link
-                          to={routes.home()}
+                          to={routes.profile()}
                           href="#"
                           className="block px-4 py-2 text-sm text-gray-700"
                           role="menuitem"
@@ -227,18 +227,13 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
                         >
                           Settings
                         </Link>
-                        <Link
-                          to={routes.home()}
-                          href="#"
+                        <button
+                          type="button"
                           className="block px-4 py-2 text-sm text-gray-700"
-                          role="menuitem"
-                          tabIndex={-1}
-                          id="user-menu-item-2"
+                          onClick={logOut}
                         >
-                          <button type="button" onClick={logOut}>
-                            Logout
-                          </button>
-                        </Link>
+                          Logout
+                        </button>
                       </div>
                     )}
                   </div>
@@ -251,34 +246,38 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
           <div className="sm:hidden" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-              <a
+              <Link
+                to={routes.home()}
                 href="#"
                 className="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
                 aria-current="page"
               >
                 Dashboard
-              </a>
+              </Link>
 
-              <a
+              <Link
+                to={routes.home()}
                 href="#"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Team
-              </a>
+              </Link>
 
-              <a
+              <Link
+                to={routes.home()}
                 href="#"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Projects
-              </a>
+              </Link>
 
-              <a
+              <Link
+                to={routes.home()}
                 href="#"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
                 Calendar
-              </a>
+              </Link>
             </div>
           </div>
         </nav>
