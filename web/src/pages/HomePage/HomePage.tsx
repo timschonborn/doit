@@ -1,6 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 import ItemsCell from 'src/components/ItemsCell'
+import WeatherCard from 'src/components/WeatherCard/WeatherCard'
 // import { Form, TextField, Submit } from '@redwoodjs/forms'
 import WeatherCell from 'src/components/WeatherCell'
 
@@ -19,6 +20,7 @@ const HomePage = () => {
         My default route is named <code>home</code>, link to me with `
         <Link to={routes.home()}>Home</Link>`
       </p>
+      <WeatherCard />
       <ItemsCell />
       {/* <Form onSubmit={onSubmit} style={{ fontSize: '2rem' }}>
         <TextField
