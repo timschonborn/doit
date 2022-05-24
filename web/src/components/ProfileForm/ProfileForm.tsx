@@ -12,6 +12,7 @@ const DUMMY_PROFILE = {
   name: 'Tim Schoenborn',
   email: 't.j.schonborn@gmail.com',
   bio: "I'm a software engineer, and I'm passionate about building software that improves the world.",
+  birthday: '02-06-1995',
   image: 'https://github.com/timschonborn.png?size=200',
 }
 
@@ -32,7 +33,7 @@ const ProfileForm = ({ profileData = DUMMY_PROFILE }) => {
               <div className="flex justify-center items-center pt-2 pb-2">
                 <img
                   src={profileData.image}
-                  className="mb-4 object-cover w-16 h-16 rounded-full"
+                  className="mb-4 object-cover w-32 h-32 rounded-full"
                   alt="user-profile"
                 />
               </div>
@@ -76,6 +77,20 @@ const ProfileForm = ({ profileData = DUMMY_PROFILE }) => {
                   defaultValue={profileData.email}
                 />
                 <FieldError name="email" />
+
+                <Label
+                  name="birthday"
+                  className="block text-gray-700 text-sm font-bold mb-2"
+                >
+                  Date of birth
+                </Label>
+                <TextField
+                  name="birthday"
+                  id="birthday"
+                  className="shadow  appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  defaultValue={profileData.birthday}
+                />
+                <FieldError name="birthday" />
 
                 <Submit className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 mt-4 rounded">
                   Update
